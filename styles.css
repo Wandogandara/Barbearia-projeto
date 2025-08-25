@@ -205,6 +205,8 @@ h4{
     border-radius: 20px;
     overflow-y: auto;
      animation: float 2s ease-in-out infinite;
+     width: 350px;
+     height:350px;
 }
 
 @keyframes float {
