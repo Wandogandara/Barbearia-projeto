@@ -6,29 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="script.js">
+    <title>Barbearia Imperial</title>
 </head>
 
 <body>
     <header>
         <div class="logo-container">
-            <img src="logo.webp" alt="" class="logo">
+            <img src="logo.webp" alt="Logo Barbearia Imperial" class="logo">
         </div>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#">Inicio</a>
-                </li>
-                <li>
-                    <a href="#">Serviços</a>
-                </li>
-                <li>
-                    <a href="#">Sobre Nós</a>
-                </li>
-                <li>
-                    <a href="#">Contato</a>
-                </li>
+        <nav class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="#">Contato</a></li>
             </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
     </header>
 
@@ -59,84 +55,68 @@
                 </p>
             </div>
         </section>
-    </main>
 
+        <div class="container-servicos">
+            <h2>Serviços</h2>
+            <h3>Nossos serviços incluem:</h3>
+            <p class="paragrafo-servicos">
+                "Cortes masculinos clássicos e modernos". <br>
+                "Barba completa com toalha quente e acabamento premium". <br>
+                "Hidratação capilar e da barba". <br>
+                "Pigmentação e camuflagem de fios brancos". <br>
+                "Design de sobrancelhas masculinas". <br>
+                "Pacotes especiais para noivos e ocasiões únicas". <br><br>
 
-
-
-    <div class="container-servicos">
-        <h2>Serviços</h2>
-        <h3> Nossos serviços incluem:</h3>
-
-
-        <p class="paragrafo-servicos">"Cortes masculinos clássicos e modernos". <br>
-            "Barba completa com toalha quente e acabamento premium". <br>
-            "Hidratação capilar e da barba". <br>
-            "Pigmentação e camuflagem de fios brancos". <br>
-            "Design de sobrancelhas masculinas". <br>
-            "Pacotes especiais para noivos e ocasiões únicas". <br> <br>
-
-            Agende já o seu horário e descubra porque a Barbearia Imperial é referência em estilo, tradição e confiança.
-            <br>
-
-            Aqui, cada cliente é tratado como realeza.
-        </p>
-
-    </div>
-
-
-    <section class="secao-sobre-nos">
-
-        <h2 class="titulo-sobre">Sobre Nós</h2>
-
-        <img src="imagem 1.jpg" alt="" class="imagem-sobre">
-
-        <h4>Barbearia Imperial – A Realeza do Seu Estilo</h4>
-        <p class="paragrafo-sobre">Bem-vindo à Barbearia Imperial, o seu novo destino para estilo e cuidado masculino!
-            Fundada em 2025, nossa barbearia nasceu com a missão de oferecer um espaço dedicado à estética e bem-estar,
-            onde cada cliente é tratado como um verdadeiro imperador. <br>
-            Nossa prioridade é proporcionar uma experiência única, personalizada e de elevada qualidade. Cada corte,
-            barba ou tratamento de sobrancelha é executado com atenção aos mínimos detalhes, visando realçar sua
-            confiança e estilo pessoal.
-        </p>
-    </section>
-
-    <section class="secao-contato">
-        <h2 class="titulo-contato">Contato</h2>
-        <iframe class="localizacao-maps"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1994236.110625463!2d-46.78440466767578!3d-12.516661964248954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1755904969954!5m2!1spt-BR!2sbr"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-
-        <div class="div-contato">
-            <h3>Entre encontato</h3>
-
-
-            <div class="whatssap"><i class="fa-brands fa-whatsapp"></i>
-                <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+gostaria+de+saber+mais" target="_blank"
-                    class="whatsapp-link">
-                    WhatsApp
-                </a>
-            </div>
-
-            <div class="Telefone"> <i class="fa-solid fa-phone"></i>
-                <p>Telefone: (65)9999999999</p>
-            </div>
-            <div class="gmail"> <i class="fa-solid fa-envelope"></i>
-                <p>Gmail:barbeariaimperial25@gmail.com</p>
-            </div>
-
+                Agende já o seu horário e descubra porque a Barbearia Imperial é referência em estilo, tradição e confiança.
+                <br>
+                Aqui, cada cliente é tratado como realeza.
+            </p>
         </div>
 
-    </section>
+        <section class="secao-sobre-nos">
+            <h2 class="titulo-sobre">Sobre Nós</h2>
+            <img src="imagem 1.jpg" alt="Interior da Barbearia Imperial" class="imagem-sobre">
+            <h4>Barbearia Imperial – A Realeza do Seu Estilo</h4>
+            <p class="paragrafo-sobre">
+                Bem-vindo à Barbearia Imperial, o seu novo destino para estilo e cuidado masculino!
+                Fundada em 2025, nossa barbearia nasceu com a missão de oferecer um espaço dedicado à estética e bem-estar,
+                onde cada cliente é tratado como um verdadeiro imperador. <br>
+                Nossa prioridade é proporcionar uma experiência única, personalizada e de elevada qualidade. Cada corte,
+                barba ou tratamento de sobrancelha é executado com atenção aos mínimos detalhes, visando realçar sua
+                confiança e estilo pessoal.
+            </p>
+        </section>
 
+        <section class="secao-contato">
+            <h2 class="titulo-contato">Contato</h2>
+            <iframe class="localizacao-maps"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1994236.110625463!2d-46.78440466767578!3d-12.516661964248954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1755904969954!5m2!1spt-BR!2sbr"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
 
+            <div class="div-contato">
+                <h3>Entre em contato</h3>
+                <div class="whatssap">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+gostaria+de+saber+mais" target="_blank"
+                        class="whatsapp-link">
+                        WhatsApp
+                    </a>
+                </div>
+                <div class="Telefone">
+                    <i class="fa-solid fa-phone"></i>
+                    <p>Telefone: (65) 99999-9999</p>
+                </div>
+                <div class="gmail">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>Email: barbeariaimperial25@gmail.com</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        
-      &copy;Todos os direitos reservados-Barbearia Imperial-2025
-        
+        &copy; Todos os direitos reservados - Barbearia Imperial - 2025
     </footer>
 
 </body>
