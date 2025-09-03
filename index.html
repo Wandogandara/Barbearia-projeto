@@ -5,9 +5,347 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="script.js">
     <title>Barbearia Imperial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        :root {
+            --cor-primaria: #333;
+            --cor-secundaria: #8f8a8a;
+            --cor-destaque: #8B4513;
+            --cor-texto: #2f2f2f;
+            --cor-branco: #fff;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--cor-texto);
+            overflow-x: hidden;
+        }
+
+        /* Header e Navegação */
+        header {
+            background-color: var(--cor-secundaria);
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--cor-primaria);
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--cor-destaque);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--cor-primaria);
+            z-index: 1001;
+        }
+
+        /* Conteúdo Principal */
+        .container-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 80vh;
+            object-fit: cover;
+        }
+
+        .apresentacao {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--cor-branco);
+        }
+
+        .apresentacao h1 {
+            font-size: 2.5rem;
+            color: var(--cor-primaria);
+            margin-bottom: 15px;
+        }
+
+        .paragrafo-slogan {
+            font-size: 1.3rem;
+            color: #555;
+            font-style: italic;
+        }
+
+        .container-banner2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            gap: 30px;
+            background-color: #f0f0f0;
+        }
+
+        .banner-2 {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .texto-banner2 {
+            max-width: 500px;
+        }
+
+        .texto-banner2 p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--cor-texto);
+            text-align: center;
+        }
+
+        .container-servicos {
+            background-color: var(--cor-secundaria);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .container-servicos h2 {
+            font-size: 2.2rem;
+            color: var(--cor-primaria);
+            margin-bottom: 15px;
+        }
+
+        .container-servicos h3 {
+            font-size: 1.5rem;
+            color: var(--cor-destaque);
+            margin-bottom: 20px;
+        }
+
+        .paragrafo-servicos {
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .secao-sobre-nos {
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--cor-branco);
+        }
+
+        .titulo-sobre {
+            text-align: center;
+            color: var(--cor-primaria);
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+
+        .imagem-sobre {
+            width: 100%;
+            max-width: 420px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .secao-sobre-nos h4 {
+            font-size: 1.5rem;
+            color: var(--cor-destaque);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .paragrafo-sobre {
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 800px;
+        }
+
+        .secao-contato {
+            background-color: var(--cor-secundaria);
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .titulo-contato {
+            color: var(--cor-primaria);
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+
+        .localizacao-maps {
+            width: 100%;
+            max-width: 600px;
+            height: 350px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .div-contato {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .div-contato h3 {
+            font-size: 1.8rem;
+            color: var(--cor-primaria);
+            margin-bottom: 20px;
+        }
+
+        .whatssap, .Telefone, .gmail {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .whatssap i, .Telefone i, .gmail i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+            color: var(--cor-destaque);
+        }
+
+        .whatsapp-link {
+            color: var(--cor-primaria);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .whatsapp-link:hover {
+            color: var(--cor-destaque);
+        }
+
+        footer {
+            padding: 20px;
+            background-color: #b6aaaa;
+            text-align: center;
+            color: var(--cor-primaria);
+            font-weight: 500;
+        }
+
+        /* Media Queries para Responsividade */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--cor-secundaria);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                display: flex;
+                animation: slideDown 0.5s ease forwards;
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+                text-align: center;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .apresentacao h1 {
+                font-size: 2rem;
+            }
+
+            .paragrafo-slogan {
+                font-size: 1.1rem;
+            }
+
+            .container-banner2 {
+                flex-direction: column;
+            }
+
+            .texto-banner2 p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .nav-links {
+                display: flex !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -90,7 +428,7 @@
         <section class="secao-contato">
             <h2 class="titulo-contato">Contato</h2>
             <iframe class="localizacao-maps"
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1994236.110625463!2d-46.78440466767578!3d-12.516661964248954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1755904969954!5m2!1spt-BR!2sbr"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.679534349972!2d-35.20854822532206!3d-5.774506194258488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b300271e6fe0c5%3A0x4fb3554bfd256e2b!2sNatal%2C%20RN!5e0!3m2!1spt-BR!2sbr!4v1730653064149!5m2!1spt-BR!2sbr"
                 style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
 
@@ -119,6 +457,51 @@
         &copy; Todos os direitos reservados - Barbearia Imperial - 2025
     </footer>
 
+    <script>
+        // JavaScript para o menu hamburger
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                
+                // Altera o ícone entre hamburger e X
+                const icon = menuToggle.querySelector('i');
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+            
+            // Fecha o menu ao clicar em um link
+            const navItems = document.querySelectorAll('.nav-links a');
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+            
+            // Fecha o menu ao clicar fora dele
+            document.addEventListener('click', function(event) {
+                const isClickInsideNav = navLinks.contains(event.target);
+                const isClickInsideToggle = menuToggle.contains(event.target);
+                
+                if (!isClickInsideNav && !isClickInsideToggle && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
